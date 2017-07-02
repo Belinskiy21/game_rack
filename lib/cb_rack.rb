@@ -1,4 +1,4 @@
-require 'erb'
+# require 'erb'
 require_relative 'controllers/action_controller'
 
 class CbRack
