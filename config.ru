@@ -1,8 +1,14 @@
 require './lib/cb_rack'
 
-# use Rack::Reloader, 0
-use Rack::Static, urls: ['/stylesheets'], root: 'public'
+app = Rack::Builder.new do
+  use Rack::Reloader, 0
+  use Rack::Static, urls: ['/stylesheets'], root: 'public'
 
-use Rack::Session::Cookie
+  use Rack::Session::Cookie, key: 'rack.session',
+  expire_after: 216_000,
+  secret: '*&(^B234'
 
-run CbRack
+  run CbRack
+end
+
+run app
