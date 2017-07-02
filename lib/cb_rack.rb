@@ -2,6 +2,7 @@ require 'erb'
 require_relative 'controllers/action_controller'
 
 class CbRack
+  attr_reader :request, :action
 
   def self.call(env)
     new(env).response.finish
