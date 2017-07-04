@@ -1,5 +1,5 @@
 # require 'erb'
-require_relative 'controllers/action_controller'
+require_relative 'action_controller'
 
 class CbRack
   attr_reader :request, :action
