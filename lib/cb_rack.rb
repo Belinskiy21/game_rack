@@ -17,12 +17,12 @@ class CbRack
     case @request.path
     when '/'
       @action.index
-    when '/start_game'
-      @action.start_game
-    when '/try'
-      @action.try
-    when '/get_hint'
-      @action.get_hint
+    # when '/start_game'
+    #   @action.start_game
+    # when '/try'
+    #   @action.try
+    # when '/get_hint'
+    #   @action.get_hint
     else
       Rack::Response.new('Not Found', 404)
     end

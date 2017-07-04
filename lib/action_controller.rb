@@ -3,7 +3,7 @@ require 'erb'
 require 'yaml'
 require 'securerandom'
 # require_relative '../models/game'
-require 'pry'
+# require 'pry'
 
 class Action
   def initialize(request)
