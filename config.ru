@@ -6,7 +6,7 @@ app = Rack::Builder.new do
 
   use Rack::Session::Cookie, key: 'rack.session',
   expire_after: 216_000,
-  secret: '*&(^B234'
+  secret: '*&(^B232111
 
   run CbRack
 end
