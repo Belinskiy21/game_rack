@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codebreaker</title>
+  <link rel="stylesheet" href="/stylesheets/application.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <h1>I made a secrete code from 1 to 6! You have 5 attempts!</h1>
+    <p>Try guess, <%= name %>!<p>
+    <!-- <p><%= @game.secret_code %></p> -->
+      <p>Attempt :<%= @game.attempt_counter %></p>
+      <form method="post" action="/try">
+        <input name="guess" type="text" placeholder = "4 digits" pattern = "^[1-6]{4}$">
+        <input type="submit" value="Try">
+      </form>
+      <form action="/get_hint" method="get">
+      <input type="submit" value="Hint">
+    </form>
+        <p>Hint :<%= @game.hint_number %>
+    </p>
+    <% @game.game_history.map do |item| %>
+    <p> You: <%= item[:you] %> Result: <%= item[:result] %></p>
+    <% end %>
+  </div>
+</body>
+</html>
